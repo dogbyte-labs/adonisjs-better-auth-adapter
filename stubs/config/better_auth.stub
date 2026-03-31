@@ -1,0 +1,14 @@
+{{{
+  exports({ to: app.configPath('better_auth.ts') })
+}}}
+import type { BetterAuthOptions } from 'better-auth'
+
+const betterAuthConfig: BetterAuthOptions = {
+  secret: process.env.BETTER_AUTH_SECRET,
+  baseURL: process.env.BETTER_AUTH_URL,
+  emailAndPassword: {
+    enabled: true,
+  },
+}
+
+export default betterAuthConfig

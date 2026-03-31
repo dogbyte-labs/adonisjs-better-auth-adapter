@@ -1,0 +1,25 @@
+{{{
+  exports({ to: app.makePath('auth.ts') })
+}}}
+import app from '@adonisjs/core/services/app'
+import db from '@adonisjs/lucid/services/db'
+import { betterAuth, type Auth, type BetterAuthOptions } from 'better-auth'
+import { lucidAdapter } from 'adonisjs-better-auth-adapter'
+import betterAuthConfig from '#config/better_auth'
+
+const database = lucidAdapter({ client: db.connection() })
+
+type RuntimeBetterAuthOptions = BetterAuthOptions & {
+  database: typeof database
+}
+
+let auth: Auth<RuntimeBetterAuthOptions>
+
+await app.booted(async () => {
+  auth = betterAuth({
+    ...betterAuthConfig,
+    database,
+  })
+})
+
+export { auth }
