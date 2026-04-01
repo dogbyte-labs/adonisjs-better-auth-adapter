@@ -1,7 +1,7 @@
 {
   "name": "@dogbyte-labs/adonisjs-better-auth-adapter",
   "description": "Better Auth database adapter for AdonisJS Lucid",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "engines": {
     "node": ">=24.0.0"
   },
