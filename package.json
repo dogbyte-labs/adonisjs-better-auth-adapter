@@ -5,6 +5,7 @@
   "engines": {
     "node": ">=24.0.0"
   },
+  "repository": "github:dogbyte-labs/adonisjs-better-auth-adapter",
   "type": "module",
   "files": [
     "build",
